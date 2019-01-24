@@ -1,10 +1,10 @@
-workflow "New workflow" {
+workflow "Release" {
   on = "push"
-  resolves = ["docker://goreleaser/goreleaser"]
+  resolves = ["goreleaser"]
 }
 
-action "docker://goreleaser/goreleaser" {
-  uses = "docker://goreleaser/goreleaser"
+action "goreleaser" {
+  uses = "docker://goreleaser/goreleaser:v0.98.0-action"
   secrets = ["GITHUB_TOKEN"]
   args = "release"
 }

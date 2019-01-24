@@ -6,4 +6,5 @@ workflow "New workflow" {
 action "docker://goreleaser/goreleaser" {
   uses = "docker://goreleaser/goreleaser"
   secrets = ["GITHUB_TOKEN"]
+  args = "release"
 }

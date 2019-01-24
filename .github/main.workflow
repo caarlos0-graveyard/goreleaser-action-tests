@@ -4,7 +4,6 @@ workflow "Release" {
 }
 
 action "tag-filter" {
-  needs = ["env"]
   uses = "docker://alpine"
   args = ["sh", "-c", "echo $GITHUB_REF | grep -Eq refs/tags.*"]
 }

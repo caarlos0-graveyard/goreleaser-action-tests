@@ -1,5 +1,6 @@
 workflow "Release" {
   on = "push"
+  resolves = ["goreleaser"]
 }
 
 action "tag-filter" {

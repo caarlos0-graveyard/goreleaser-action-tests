@@ -9,7 +9,7 @@ action "is-tag" {
 }
 
 action "goreleaser" {
-  uses = "goreleaser/goreleaser/action@actions"
+  uses = "docker://goreleaser/goreleaser:action-test"
   secrets = [
     "GITHUB_TOKEN",
     "DOCKER_USERNAME",

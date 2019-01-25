@@ -1,0 +1,6 @@
+builds:
+- env:
+  - CGO_ENABLED=0
+dockers:
+  - image_templates:
+    - 'caarlos0/goreleaser-action-tests:{{ .Tag }}'

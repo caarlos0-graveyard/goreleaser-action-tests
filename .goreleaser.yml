@@ -1,6 +1,6 @@
 before:
   hooks:
-    - go get ./...
+    - go mod download
 builds:
 - env:
   - CGO_ENABLED=0

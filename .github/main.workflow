@@ -3,14 +3,14 @@ workflow "Release" {
   resolves = ["goreleaser"]
 }
 
-action "tag-filter" {
-  uses = "docker://alpine"
-  args = ["sh", "-c", "echo $GITHUB_REF | grep -Eq refs/tags.*"]
+action "is-tag" {
+  uses = "actions/bin/filter@master"
+  args = "tag"
 }
 
 action "goreleaser" {
   uses = "docker://goreleaser/goreleaser:v0.98.0-action"
   secrets = ["GITHUB_TOKEN"]
   args = "release"
-  needs = ["tag-filter"]
+  needs = ["is-tag"]
 }

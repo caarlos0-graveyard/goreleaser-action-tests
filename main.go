@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/alecthomas/chroma"
+)
 
 func main() {
-	fmt.Println("vim-go")
+	var a chroma.Colour
+	fmt.Println("depss", a)
 }
